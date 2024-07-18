@@ -1,5 +1,6 @@
-import React from "react";
-import { useTodoListViewModel } from "../viewModels/TodoListViewModel";
+import { useTodoListViewModel } from "../../viewModels/TodoListViewModel";
+import { Todo } from "../Todo/Todo";
+import './styles.module.css';
 
 const TodoList: React.FC = () => {
 	const { todos } = useTodoListViewModel();
@@ -9,7 +10,7 @@ const TodoList: React.FC = () => {
 			<h1>Todo List</h1>
 			<ul>
 				{todos.map(todo => (
-					<li key={todo.id}>{todo.title}</li>
+					<Todo key={todo.id} title={todo.title} />
 				))}
 			</ul>
 		</div>
